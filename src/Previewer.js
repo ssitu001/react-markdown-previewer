@@ -1,28 +1,23 @@
 import React, { Component } from 'react';
 import marked from 'marked';
 
-class Previewer extends Component {
- constructor() {
-   super();
+import './App.css';
+
+const createMarkUp = (str) => {
+ return {
+   __html: str,
  }
-
- createMarkUp = (str) => {
-  return {
-    __html: str,
-  }
 } 
-
- render() {
+const Previewer = ({preview}) => {
   marked.setOptions({
-    gfm: true,
     sanitize: true,
   });
-   return (
-     <div
-      dangerouslySetInnerHTML={this.createMarkUp(marked(this.props.preview))}
-     />
-   )
- }
+
+  return (
+    <div className="preview-container"
+      dangerouslySetInnerHTML={createMarkUp(marked(preview))}
+    />
+  )
 }
 
 export default Previewer;

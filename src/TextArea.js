@@ -20,16 +20,13 @@ class TextArea extends Component {
     })
   }
 
-  componentDidUpdate() {
-    console.log('this.state', this.state)
-  }
-
   render() {
     return (
       <div className="container main-container">
         <div className="row">
           <div className="col-sm-6">
-            <textarea defaultValue={this.state.default} rows="30" cols="60" onChange={this.handleChange}>
+          <h4>Enter Your Markdown Here:</h4>
+            <textarea defaultValue={this.state.default} rows="50" cols="60" onChange={this.handleChange}>
             </textarea>
           </div>
           <div className="col-sm-6">
